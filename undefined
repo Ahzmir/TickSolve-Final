@@ -1,0 +1,9 @@
+import Dashboard from "../../pages/dashboard";
+
+export default function DashboardStoryboard() {
+  return (
+    <div className="bg-background min-h-screen">
+      <Dashboard />
+    </div>
+  );
+}
