@@ -1,0 +1,4 @@
+node_modules
+.next
+**/tempobook/dynamic/
+**/tempobook/storyboards/

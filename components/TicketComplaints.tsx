@@ -86,19 +86,19 @@ const TicketComplaints: React.FC = () => {
   };
 
   return (
-    <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-      <div className="px-4 py-5 sm:px-6">
-        <h3 className="text-lg leading-6 font-medium text-gray-900">
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="px-6 py-5 border-b border-gray-200">
+        <h3 className="text-xl font-semibold text-gray-900">
           Submit a New Ticket
         </h3>
-        <p className="mt-1 max-w-2xl text-sm text-gray-500">
+        <p className="mt-1 text-sm text-gray-500">
           Please provide details about your complaint or inquiry.
         </p>
       </div>
 
-      <div className="border-t border-gray-200 px-4 py-5 sm:p-6">
+      <div className="px-6 py-5">
         {error && (
-          <div className="mb-4 p-3 text-sm text-white bg-error rounded-md">
+          <div className="mb-6 p-4 text-sm text-white bg-error rounded-md">
             {error}
           </div>
         )}
@@ -107,14 +107,14 @@ const TicketComplaints: React.FC = () => {
           <div>
             <label
               htmlFor="category"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Category *
             </label>
             <select
               id="category"
               name="category"
-              className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
+              className="form-select w-full"
               value={formData.category}
               onChange={handleChange}
               required
@@ -133,7 +133,7 @@ const TicketComplaints: React.FC = () => {
           <div>
             <label
               htmlFor="subject"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Subject *
             </label>
@@ -141,7 +141,7 @@ const TicketComplaints: React.FC = () => {
               type="text"
               name="subject"
               id="subject"
-              className="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              className="form-input w-full"
               value={formData.subject}
               onChange={handleChange}
               required
@@ -152,7 +152,7 @@ const TicketComplaints: React.FC = () => {
           <div>
             <label
               htmlFor="description"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Description *
             </label>
@@ -160,7 +160,7 @@ const TicketComplaints: React.FC = () => {
               id="description"
               name="description"
               rows={4}
-              className="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              className="form-textarea w-full"
               value={formData.description}
               onChange={handleChange}
               required
@@ -174,14 +174,14 @@ const TicketComplaints: React.FC = () => {
           <div>
             <label
               htmlFor="priority"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 mb-1"
             >
               Priority
             </label>
             <select
               id="priority"
               name="priority"
-              className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
+              className="form-select w-full"
               value={formData.priority}
               onChange={handleChange}
             >
@@ -193,7 +193,7 @@ const TicketComplaints: React.FC = () => {
             </select>
           </div>
 
-          <div className="flex justify-end">
+          <div className="flex justify-end pt-4">
             <button
               type="button"
               className="btn btn-outline mr-3"

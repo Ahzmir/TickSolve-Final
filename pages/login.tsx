@@ -60,56 +60,71 @@ const Login: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex items-center justify-center min-h-screen bg-background">
-        <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg">
+      <main className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+        <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-2xl border border-blue-100 transition-all duration-300 hover:shadow-blue-200/50">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-primary">TickSolve</h1>
-            <p className="mt-2 text-gray-600">USTP Student Complaint System</p>
+            <h1 className="text-4xl font-extrabold text-blue-700 tracking-tight">
+              TickSolve
+            </h1>
+            <p className="mt-2 text-gray-600 font-medium">
+              USTP Student Complaint System
+            </p>
+            <div className="mt-4 w-16 h-1 bg-blue-500 mx-auto rounded-full"></div>
           </div>
 
           {error && (
-            <div className="p-3 text-sm text-white bg-error rounded-md">
+            <div className="p-4 text-sm text-white bg-red-500 rounded-lg shadow-md animate-pulse">
               {error}
             </div>
           )}
 
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="studentId" className="label">
+            <div className="space-y-2">
+              <label
+                htmlFor="studentId"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Student ID
               </label>
-              <input
-                id="studentId"
-                name="studentId"
-                type="text"
-                required
-                className="input"
-                placeholder="Enter your student ID"
-                value={studentId}
-                onChange={(e) => setStudentId(e.target.value)}
-              />
+              <div className="relative">
+                <input
+                  id="studentId"
+                  name="studentId"
+                  type="text"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 outline-none"
+                  placeholder="Enter your student ID"
+                  value={studentId}
+                  onChange={(e) => setStudentId(e.target.value)}
+                />
+              </div>
             </div>
 
-            <div>
-              <label htmlFor="password" className="label">
+            <div className="space-y-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Password
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                className="input"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 outline-none"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
             </div>
 
-            <div>
+            <div className="pt-2">
               <button
                 type="submit"
-                className="w-full btn btn-primary"
+                className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                 disabled={loading}
               >
                 {loading ? (
@@ -143,8 +158,8 @@ const Login: NextPage = () => {
             </div>
           </form>
 
-          <div className="mt-6 text-center text-sm">
-            <p className="text-gray-600">
+          <div className="mt-6 text-center">
+            <p className="text-gray-600 text-sm italic">
               * Only registered USTP students can access this system.
             </p>
           </div>
